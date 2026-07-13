@@ -1,14 +1,19 @@
+# Imports
 import requests
 
+# Asks for users chosen city
 print()
 city = input("Choose a city to see information on the weather: ").strip().lower()
 
+# Updates URL
 url = f"https://wttr.in/{city}?format=j1"
 
+# Starts try block
 try:
     response = requests.get(url)
     print(f"Server Status Code: {response.status_code}")
 
+# Checks status code
     if response.status_code == 200:
 
         data = response.json()
@@ -21,7 +26,6 @@ try:
         uv = current_weather['uvIndex']
         wind_dir = current_weather['winddir16Point']
         wind_speed = current_weather['windspeedMiles']
-        # weather_time = current_weather['observation_time']
 
         print()
         print(f"In the city of {city.capitalize()}...")
@@ -31,5 +35,6 @@ try:
         print(f"The direction of the wind on a 16 point is: {wind_dir}, and the speed is {wind_speed} MPH.")
         print()
 
+# Reveals what error occured
 except Exception as e:
     print(f"An error occurred: {e}")
