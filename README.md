@@ -22,15 +22,14 @@ pip install requests
 ## Example output
 
 ```
-Choose a city to see information on the weather: Chicago
+Choose a city to see information on the weather: Detroit
 
-Server Status Code: 200
-
-In the city of Chicago...
-The temperature(F) is : 68°, but feels like: 68°.
-The humidity level is a: 62.
-The uv index is at a: 4.
-The direction of the wind on a 16 point is: ENE, and the speed is 7 MPH.
+In the city of Detroit...
+The nearest region is : Ontario.
+The temperature (F) is: 85°, but feels like: 85°.
+The humidity level is: 43%.
+The uv index is at a: 6.
+The direction of the wind on a 16 point is: WSW, and the speed is 4 MPH.
 ```
 ---
 ## API Reference
