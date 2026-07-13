@@ -21,6 +21,7 @@ try:
         uv = current_weather['uvIndex']
         wind_dir = current_weather['winddir16Point']
         wind_speed = current_weather['windspeedMiles']
+        # weather_time = current_weather['observation_time']
 
         print()
         print(f"In the city of {city.capitalize()}...")
