@@ -16,6 +16,7 @@ try:
     if response.status_code == 200:
         data = response.json()
         current_weather = data['current_condition'][0]
+        nearest_area = data['nearest_area'][0]
 
         temp = current_weather['temp_F']
         feel_temp = current_weather['FeelsLikeF']
@@ -23,9 +24,12 @@ try:
         uv = current_weather['uvIndex']
         wind_dir = current_weather['winddir16Point']
         wind_speed = current_weather['windspeedMiles']
+        region_val = nearest_area['region'][0]['value']
+
 
         print()
         print(f"In the city of {city.capitalize()}...")
+        print(f"The nearest region is : {region_val}.")
         print(f"The temperature (F) is: {temp}°, but feels like: {feel_temp}°.")
         print(f"The humidity level is: {humid}%.")
         print(f"The uv index is at a: {uv}.")
