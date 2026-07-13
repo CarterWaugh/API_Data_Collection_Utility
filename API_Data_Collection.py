@@ -1,5 +1,4 @@
 import requests
-import time
 
 print()
 city = input("Choose a city to see information on the weather: ").strip().lower()
