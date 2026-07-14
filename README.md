@@ -31,6 +31,11 @@ The humidity level is: 43%.
 The uv index is at a: 6.
 The direction of the wind on a 16 point is: WSW, and the speed is 4 MPH.
 ```
+
+## Background Log Output (`weather.log`)
+```
+INFO:root:SUCCESS - City: Detroit | Region: Ontario | Temp: 85F | FeelsLike: 85F | Humidity: 43% | UV: 6 | Wind: 4MPH WSW
+```
 ---
 ## API Reference
 This project utilizes the free weather forecast service wttr.in.
