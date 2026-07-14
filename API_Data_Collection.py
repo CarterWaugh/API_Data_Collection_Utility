@@ -62,7 +62,7 @@ try:
             f"\nFailed to retrieve data. Server returned status: {response.status_code}\n"
         )
 
-        # 4. LOG WARNING: Records unexpected server responses
+        # LOG WARNING: Records unexpected server responses
         logging.warning(
             f"UNKNOWN ERROR - Server responded with status code: {response.status_code}"
         )
