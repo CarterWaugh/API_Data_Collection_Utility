@@ -3,7 +3,7 @@ import logging
 import requests
 
 # Setup the basic logging configuration
-logging.basicConfig(filename="weather.log", level=logging.INFO)
+logging.basicConfig(filename="weather.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Asks for users chosen city
 print()
