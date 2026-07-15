@@ -16,7 +16,7 @@ url = f"https://wttr.in/{city}?format=j1"
 try:
     response = requests.get(url)
 
-    # SUCCESS: Checks if status code is 200 (OK)
+    # SUCCESS: Checks if status code is 200
     if response.status_code == 200:
         data = response.json()
         current_weather = data["current_condition"][0]
@@ -41,28 +41,28 @@ try:
         )
         print()
 
-        # LOG SUCCESS: Records all the data you collected into the file
+        # LOG SUCCESS
         logging.info(
             f"SUCCESS - City: {city.capitalize()} | Region: {region_val} | Temp: {temp}F | FeelsLike: {feel_temp}F | Humidity: {humid}% |\n                  UV: {uv} | Wind: {wind_speed}MPH {wind_dir}"
         )
 
-    # KNOWN ERRORS: returns what happened if city isnt found
+    # KNOWN ERRORS
     elif response.status_code in [404, 500]:
         print(f"\nServer Status Code: {response.status_code}")
         print("City not found. Please check your spelling and try again.\n")
 
-        # LOG WARNING: Records that the request failed because of a bad city name or server issue
+        # LOG WARNING
         logging.warning(
             f"FAILED - Checked city: '{city}'. Server responded with status code: {response.status_code}"
         )
 
-    # UNKNOWN ERRORS: Any other status code
+    # UNKNOWN ERRORS
     else:
         print(
             f"\nFailed to retrieve data. Server returned status: {response.status_code}\n"
         )
 
-        # LOG WARNING: Records unexpected server responses
+        # LOG WARNING
         logging.warning(
             f"UNKNOWN ERROR - Server responded with status code: {response.status_code}"
         )
@@ -71,5 +71,5 @@ try:
 except Exception as e:
     print(f"\nThere was an error: {e}\n")
 
-    # LOG ERROR: Records a system crash (like your computer losing internet completely)
+    # LOG ERROR
     logging.error(f"CRASH - Script encountered a critical error: {e}")
