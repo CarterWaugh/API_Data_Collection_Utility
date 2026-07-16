@@ -9,12 +9,15 @@ logging.basicConfig(filename="weather.log", level=logging.INFO, format='%(asctim
 print()
 city = input("Choose a city to see information on the weather: ").strip().lower()
 
-# Updates URL
+# URL and User agent
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+}
 url = f"https://wttr.in/{city}?format=j1"
 
 # Starts try block
 try:
-    response = requests.get(url)
+    response = requests.get(url, headers=headers)
 
     # SUCCESS: Checks if status code is 200
     if response.status_code == 200:

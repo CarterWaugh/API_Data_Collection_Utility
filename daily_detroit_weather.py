@@ -5,12 +5,15 @@ import requests
 # Setup the basic logging configuration
 logging.basicConfig(filename="daily_detroit.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# URL
+# URL and User agent
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+}
 url = "https://wttr.in/detroit?format=j1"
 
 # Starts try block
 try:
-    response = requests.get(url)
+    response = requests.get(url, headers=headers)
 
     # SUCCESS: Checks if status code is 200
     if response.status_code == 200:
