@@ -9,9 +9,9 @@ logging.basicConfig(filename="weather.log", level=logging.INFO, format='%(asctim
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
 }
-timeout_seconds = 8
+timeout_time = 8
 
-def get_weather_info(city_name):
+def get_weather_info(city_name, headers, timeout_seconds):
         
     url = f"https://wttr.in/{city_name}?format=j1"
 

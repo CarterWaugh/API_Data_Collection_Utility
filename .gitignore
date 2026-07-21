@@ -1,3 +1,13 @@
-weather.log
+# Ignore Python compiled bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
+# Ignore local database / cache binary files if generated
+*.db
+*.sqlite
+*.sqlite3
+
+weather.log
 daily_detroit.log
