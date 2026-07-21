@@ -1,6 +1,7 @@
 # Imports
 import logging
 import requests
+import API_Data_Collection
 
 # Setup the basic logging configuration
 logging.basicConfig(filename="daily_detroit.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
