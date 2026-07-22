@@ -99,7 +99,7 @@ def main():
         return
 
     # Fetch and display
-    weather_data = get_weather_info(city)
+    weather_data = get_weather_info(city, headers, timeout_time)
     if weather_data:
         print_weather_report(city, weather_data)
 
